@@ -23,13 +23,78 @@ var myIcon = L.icon({
 });
 
 
-const marker = L.marker(([-34.6003048,-58.4388054]), {icon: myIcon}).addTo(mymap);
+// const marker = L.marker(([-34.6003048,-58.4388054]), {icon: myIcon}).addTo(mymap);
 
-//popup
-let template = `
-<h3>La Trompeta del Tata</h3>
-<img class="imagen" src="assets/tata.png">
-<br>
-<button type="button">Ver más</button>
-`
-marker.bindPopup(template);
+// const marker2 = L.marker(([-34.5914768,-58.4383124]), {icon: myIcon}).addTo(mymap);
+
+// //popup
+// let template = `
+// <h3>La Trompeta del Tata</h3>
+// <img class="imagen" src="assets/tata.png">
+// <br>
+// <button type="button">Ver más</button>
+// `
+// marker.bindPopup(template);
+
+// marker2.bindPopup(template);
+
+
+
+
+///////////////////////////////////////// TEST //////////////////////////////////////
+
+let arrayLugares = [];
+
+class lugar{
+    constructor(data){
+        this.nombreLugar = data.nombreLugar;
+        this.coordenada1 = data.coordenada1;
+        this.coordenada2 = data.coordenada2;
+        this.imagen = data.imagen;
+        arrayLugares.push(this);
+        }
+}
+
+const LUGAR1 = new lugar ({nombreLugar: "La Trompeta del Tata",
+                          coordenada1: -34.6003048,
+                          coordenada2: -58.4388054,
+                          imagen: "imagen1",
+});
+
+const LUGAR2 = new lugar ({nombreLugar: "sarkis",
+                          coordenada1: -34.5914768,
+                          coordenada2: -58.4383124,
+                          imagen: "imagen2",
+});
+
+const LUGAR3 = new lugar ({nombreLugar: "Burger King",
+                          coordenada1: -34.5904768,
+                          coordenada2: -58.4183124,
+                          imagen: "imagen2",
+});
+
+console.log(arrayLugares);
+
+
+arrayLugares.forEach((lugar) => { //Inserta los lugares al HTML 
+    let template = document.createElement("div");
+    // let lugarFinder = arrayLugares.indexOf(lugar) + 1;
+    let marker = L.marker(([lugar.coordenada1,lugar.coordenada2]), {icon: myIcon}).addTo(mymap);
+
+    template.innerHTML = `
+        <h3>${lugar.nombreLugar}</h3>
+        <img class="imagen" src="assets/tata.png">
+        <br>
+        <button type="button">Ver más</button>
+    `
+
+    marker.bindPopup(template);
+});
+
+// template.innerHTML = `
+//     <a class= "album" id="release${lugarFinder}">
+//       <p>${lugar.nombreLugar.toUpperCase()}</p>
+//       <img src="imgs/imagen${lugarFinder}.jpeg" width="200" height="200">
+//       <p>${lugar.coordenada}</p>
+//     </a>
+//     `;
