@@ -10,27 +10,28 @@
 </head>
 <body>
     <div id="nuevo-bar" class="container">
-        <div class="text">Registrar Bar</div>
+        <h4 class="py-3">REGISTRAR BAR</h4>
         <form id="register-form" action="#">
           <div class="data">
-            <label>Nombre bar</label>
-            <input id= "bar-name" type="text" required>
+            <label>Nombre bar</label><br>
+            <input class="input-style" id= "bar-name" type="text" required>
           </div>
           <div class="data">
-            <label >Coordenada 1</label>
-            <input id= "coor-1"  required>
+            <label >Latitud</label><br>
+            <input class="input-style" id= "coor-1"  required>
           </div>
           <div class="data">
-            <label >Coordenada 2</label>
-            <input id= "coor-2"  required>
+            <label >Longitud</label><br>
+            <input class="input-style" id= "coor-2"  required>
           </div>
           <div class="data">
-            <label>Reseña</label>
-            <input id= "reseña" type="text" required>
+            <label>Reseña</label><br>
+            <textarea id= "reseña" placeholder="Coloca aquí tu reseña" type="text" required>
+            </textarea>
           </div>
           <div class="btn">
             <div class="inner">
-              <button onclick="newBar()" type="submit">login</button>
+              <button onclick="newBar()" type="submit">SUBMIT</button>
             </div>
           </div>
         </form>
