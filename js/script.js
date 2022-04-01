@@ -6,24 +6,6 @@ const mymap = L.map('map').setView([-34.6035614,-58.3855543], 13);
 
 let arrayLugares = [];
 
-const LUGAR1 = new lugar ({nombreLugar: "La Trompeta del Tata",
-                          coordenada1: -34.6003048,
-                          coordenada2: -58.4388054,
-                          imagen: "imagen1",
-});
-
-const LUGAR2 = new lugar ({nombreLugar: "sarkis",
-                          coordenada1: -34.5914768,
-                          coordenada2: -58.4383124,
-                          imagen: "imagen2",
-});
-
-const LUGAR3 = new lugar ({nombreLugar: "Burger King",
-                          coordenada1: -34.5904768,
-                          coordenada2: -58.4183124,
-                          imagen: "imagen2",
-});
-
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -56,6 +38,24 @@ class lugar{
         arrayLugares.push(this);
         }
 }
+
+const LUGAR1 = new lugar ({nombreLugar: "La Trompeta del Tata",
+                          coordenada1: -34.6003048,
+                          coordenada2: -58.4388054,
+                          imagen: "imagen1",
+});
+
+const LUGAR2 = new lugar ({nombreLugar: "sarkis",
+                          coordenada1: -34.5914768,
+                          coordenada2: -58.4383124,
+                          imagen: "imagen2",
+});
+
+const LUGAR3 = new lugar ({nombreLugar: "Burger King",
+                          coordenada1: -34.5904768,
+                          coordenada2: -58.4183124,
+                          imagen: "imagen2",
+});
 
 arrayLugares.forEach((lugar) => { //Inserta los lugares al HTML 
     let template = document.createElement("div");
