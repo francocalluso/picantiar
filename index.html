@@ -9,6 +9,32 @@
     <title>MAP TEST</title>
 </head>
 <body>
+    <div id="nuevo-bar" class="container">
+        <div class="text">Registrar Bar</div>
+        <form id="register-form" action="#">
+          <div class="data">
+            <label>Nombre bar</label>
+            <input id= "bar-name" type="text" required>
+          </div>
+          <div class="data">
+            <label >Coordenada 1</label>
+            <input id= "coor-1" type="number" required>
+          </div>
+          <div class="data">
+            <label >Coordenada 2</label>
+            <input id= "coor-2" type="number" required>
+          </div>
+          <div class="data">
+            <label>Reseña</label>
+            <input id= "reseña" type="text" required>
+          </div>
+          <div class="btn">
+            <div class="inner">
+              <button onclick="newBar()" type="submit">login</button>
+            </div>
+          </div>
+        </form>
+    </div>
     <div id="navBar">
         <img class="logo" src="assets/picantiarLogo2.png" alt="logo picantiar">
         <!-- <h1>PICANTIAR</h1> -->

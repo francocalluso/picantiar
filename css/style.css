@@ -36,6 +36,7 @@ h1 {
   position: fixed;
   top: 8vh;
   z-index: 0;
+  visibility: hidden;
 }
 #navBar {
   height: 10vh;
