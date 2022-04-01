@@ -57,7 +57,7 @@ const LUGAR3 = new lugar ({nombreLugar: "Burger King",
                           imagen: "imagen2",
 });
 
-arrayLugares.forEach((lugar) => { //Inserta los lugares al HTML 
+function cargarBar() {arrayLugares.forEach((lugar) => { //Inserta los lugares al HTML 
     let template = document.createElement("div");
     let marker = L.marker(([lugar.coordenada1,lugar.coordenada2]), {icon: myIcon}).addTo(mymap);
 
@@ -70,6 +70,9 @@ arrayLugares.forEach((lugar) => { //Inserta los lugares al HTML
 
     marker.bindPopup(template);
 });
+}
+
+cargarBar();
 
 function newBar(){    // Registra un bar al array
 
@@ -83,7 +86,9 @@ function newBar(){    // Registra un bar al array
                                       coordenada2: coordenada2
         })
         console.log(arrayLugares);
+        cargarBar();
     }    
+    
 }
 
 
